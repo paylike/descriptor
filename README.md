@@ -8,17 +8,19 @@ Everything you need to know about the descriptor property in Paylike
 
 
 ## What is it?
+
 The descriptor is used as output on the bank statement.
 
 ## How is it validated?
-The descriptor is validated against the following criteria
 
-- It can only have a character length on 22 or lower
+The descriptor is validated against the following criteria:
+
+- It can only have a length of 22 or less
 - It can only contain ASCII printable characters (see [charaters](#characters))
 
 ### Characters
-```
 
+```
 a-z
 0-9
 ! # $ % &
