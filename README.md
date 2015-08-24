@@ -29,9 +29,20 @@ a-z
 < = > ? @
 [ ] ^ _ `
 { | } ~
-
 ```
 
 ## Where is it used?
 
-You can enter a descriptor on your merchant account
+A descriptor is used in the following places:
+
+1. On your merchant account as a default for all transactions
+2. On a transaction for the reservation
+3. On each capture of a transaction
+
+The descriptor on the account (1) acts as a default if you do not supply a
+descriptor for the transaction (2).
+
+If you omit the descriptor for a capture (3) it will default to that on the
+transaction (2).
+
+As such, only the merchant account's descriptor is mandatory.
