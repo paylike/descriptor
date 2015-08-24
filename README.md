@@ -33,9 +33,9 @@ a-z
 
 ## Where is it used?
 
-A descriptor is used in the following places:
+A descriptor is set in the following places:
 
-1. On your merchant account as a default for all transactions
+1. On your merchant account
 2. On a transaction for the reservation
 3. On each capture of a transaction
 
