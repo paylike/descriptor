@@ -9,4 +9,6 @@ module.exports = {
 
 		return !!/^[\x20-\x7E]{0,22}$/.exec(descriptor);
 	},
+
+	errorMessage: 'Invalid descriptor (see https://github.com/paylike/descriptor)',
 }
