@@ -22,6 +22,7 @@ The descriptor is validated against the following criteria:
 
 ```
 a-z
+A-Z
 0-9
 ! # $ % &
 ( ) * + ,
