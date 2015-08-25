@@ -6,7 +6,7 @@ module.exports = {
 
 	isValid: function( descriptor ){
 		if (typeof descriptor !== 'string')
-			return false;
+			throw new Error('Descriptor must be a string');
 
 		return !!/^[\x20-\x7E]{0,22}$/.exec(descriptor);
 	},
