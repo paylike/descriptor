@@ -3,7 +3,7 @@
 var regex = /^[\x20-\x7E]{0,22}$/;
 
 module.exports = {
-	maxLenght: 22,
+	maxLength: 22,
 	errorMessage: 'Invalid descriptor (see https://github.com/paylike/descriptor)',
 	regex: regex,
 
