@@ -5,6 +5,7 @@ Everything you need to know about the descriptor property in Paylike
 - [What is it?](#what-is-it)
 - [How is it validated?](#how-is-it-validated)
 - [Where is it used?](#where-is-it-used)
+- [Usage](#usage)
 
 
 ## What is it?
@@ -47,3 +48,30 @@ If you omit the descriptor for a capture (3) it will default to that on the
 transaction (2).
 
 As such, only the merchant account's descriptor is mandatory.
+
+## Usage
+
+Make sure to tag any dependency on this library with the current version to
+ensure future installs of your application will work. Like so:
+
+```json
+"dependencies": {
+	"paylike-descriptor": "srcagency/descriptor#v1.0.x"
+}
+```
+
+The above entry will keep you on the `1.0.x` branch which will not have
+breaking changes merged.
+
+```js
+var descriptor = require('paylike-descriptor');
+
+descriptor.isValid('Paylike.io'); // true
+descriptor.isValid('£'); // false
+
+descriptor.errorMessage // 'Invalid descriptor (see https://github.com/paylike/descriptor)'
+
+descriptor.maxLength // 22
+
+descriptor.regex // /^[\x20-\x7E]{0,22}$/
+```
