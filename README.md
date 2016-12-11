@@ -44,7 +44,7 @@ online banking account as the text accompanying the charged amount.
 ## How is it validated?
 
 - It can only have a length of 22 or less
-- It can only contain ASCII printable characters (see [charaters](#characters)
+- It can only contain ASCII printable characters
 
 	```
 	a-z
