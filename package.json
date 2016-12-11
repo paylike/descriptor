@@ -1,6 +1,7 @@
 {
-	"name": "paylike-descriptor",
+	"name": "@paylike/descriptor",
 	"description": "A small library exposing descriptor validations",
 	"main": "index.js",
-	"version": "0.0.1"
+	"version": "0.0.1",
+	"license": "MIT"
 }
