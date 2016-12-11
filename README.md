@@ -2,38 +2,63 @@
 
 Everything you need to know about the descriptor property in Paylike
 
+- [Install](#install)
+- [Use](#use)
 - [What is it?](#what-is-it)
 - [How is it validated?](#how-is-it-validated)
-- [Where is it used?](#where-is-it-used)
-- [Usage](#usage)
+- [Where is it used in Paylike?](#where-is-it-used-in-paylike)
 
+## Install
+
+```
+npm install --save @paylike/descriptor
+```
+
+## Use
+
+```js
+var descriptor = require('@paylike/descriptor');
+
+descriptor.isValid('paylike.io'); // true
+descriptor.isValid('£'); // false
+
+descriptor.errorMessage
+descriptor.maxLength
+descriptor.regex
+```
+
+```js
+var descriptor = require('@paylike/descriptor');
+
+var $input = document.querySelector('input.descriptor');
+
+$input.pattern = descriptor.regex.source;
+$input.maxLength = descriptor.maxLength;
+```
 
 ## What is it?
 
-The descriptor is used as output on the bank statement.
+The descriptor is shown on a credit card bill, a bank statement or in an
+online banking account as the text accompanying the charged amount.
 
 ## How is it validated?
 
-The descriptor is validated against the following criteria:
-
 - It can only have a length of 22 or less
-- It can only contain ASCII printable characters (see [charaters](#characters))
+- It can only contain ASCII printable characters (see [charaters](#characters)
 
-### Characters
+	```
+	a-z
+	A-Z
+	0-9
+	! # $ % &
+	( ) * + ,
+	- . / : ;
+	< = > ? @
+	[ ] ^ _ `
+	{ | } ~
+	```
 
-```
-a-z
-A-Z
-0-9
-! # $ % &
-( ) * + ,
-- . / : ;
-< = > ? @
-[ ] ^ _ `
-{ | } ~
-```
-
-## Where is it used?
+## Where is it used in Paylike?
 
 A descriptor is set in the following places:
 
@@ -48,38 +73,3 @@ If you omit the descriptor for a capture (3) it will default to that on the
 transaction (2).
 
 As such, only the merchant account's descriptor is mandatory.
-
-## Usage
-
-Make sure to tag any dependency on this library with the current version to
-ensure future installs of your application will work. Like so:
-
-```json
-"dependencies": {
-	"paylike-descriptor": "paylike/descriptor#v1.0.x"
-}
-```
-
-The above entry will keep you on the `1.0.x` branch which will not have
-breaking changes merged.
-
-```js
-var descriptor = require('paylike-descriptor');
-
-descriptor.isValid('Paylike.io'); // true
-descriptor.isValid('£'); // false
-
-descriptor.errorMessage // 'Invalid descriptor (see https://github.com/paylike/descriptor)'
-
-descriptor.maxLength // 22
-
-descriptor.regex // /^[\x20-\x7E]{0,22}$/
-```
-
-```js
-var descriptor = require('paylike-descriptor');
-
-var $input = document.querySelector('.descriptor'); // get any DOM input element
-$input.pattern = descriptor.regex.source;
-$input.maxLength = descriptor.maxLength;
-```
