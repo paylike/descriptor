@@ -1,6 +1,7 @@
 {
 	"name": "@paylike/descriptor",
 	"description": "A small library exposing descriptor validations",
+	"repository": "paylike/descriptor",
 	"version": "1.0.0",
 	"license": "MIT"
 }
