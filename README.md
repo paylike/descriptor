@@ -39,7 +39,7 @@ $input.maxLength = descriptor.maxLength;
 ## What is it?
 
 The descriptor is shown on a credit card bill, a bank statement or in an
-online banking account as the text accompanying the charged amount.
+online banking account as the text accompanying the charged amount. [Learn more about the descriptor on our website](https://paylike.io/features/dynamic-descriptor).
 
 ## How is it validated?
 
