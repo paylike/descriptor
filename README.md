@@ -65,11 +65,12 @@ A descriptor is set in the following places:
 1. On your merchant account
 2. On a transaction for the reservation
 3. On each capture of a transaction
+4. On each refund of a transaction
 
 The descriptor on the account (1) acts as a default if you do not supply a
 descriptor for the transaction (2).
 
-If you omit the descriptor for a capture (3) it will default to that on the
+If you omit the descriptor for a capture (3) or refund (4) it will default to that on the
 transaction (2).
 
 As such, only the merchant account's descriptor is mandatory.
